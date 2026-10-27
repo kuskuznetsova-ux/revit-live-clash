@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Revit live clash</Name>
+    <Assembly>RevitLiveClash.dll</Assembly>
+    <FullClassName>RevitLiveClash.App</FullClassName>
+    <ClientId>a3c7e1f4-5b2d-4e8a-9c61-7d0f2b4a8e35</ClientId>
+    <VendorId>CLSH</VendorId>
+    <VendorDescription>Clash tools</VendorDescription>
+  </AddIn>
+</RevitAddIns>

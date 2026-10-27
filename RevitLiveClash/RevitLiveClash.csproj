@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>RevitLiveClash</AssemblyName>
+    <RootNamespace>RevitLiveClash</RootNamespace>
+    <!-- Папка установки Revit (Revit 2022-2024; для 2025+ нужен net8.0-windows) -->
+    <RevitDir Condition="'$(RevitDir)'==''">C:\Program Files\Autodesk\Revit 2022</RevitDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>$(RevitDir)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(RevitDir)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
