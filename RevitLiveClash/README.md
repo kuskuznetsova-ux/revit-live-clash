@@ -17,3 +17,11 @@ dotnet build -c Release /p:RevitDir="C:\Program Files\Autodesk\Revit 2022"
 (в `.addin` при необходимости указать полный путь к dll).
 
 Для Revit 2025+ нужен target `net8.0-windows`.
+
+## Настройка пар категорий
+Файл `%AppData%\RevitLiveClash\settings.json` (читается при запуске Revit). Пустой список `pairs` — проверять всё со всем.
+Пример: стены против труб и воздуховодов:
+```json
+{"pairs":[{"a":["OST_Walls","OST_Floors"],"b":["OST_PipeCurves","OST_DuctCurves"]}]}
+```
+Имена — значения `BuiltInCategory`. Пара работает в обе стороны.

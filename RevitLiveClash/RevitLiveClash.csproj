@@ -8,6 +8,7 @@
     <RevitDir Condition="'$(RevitDir)'==''">C:\Program Files\Autodesk\Revit 2022</RevitDir>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="RevitAPI">
       <HintPath>$(RevitDir)\RevitAPI.dll</HintPath>
       <Private>False</Private>

@@ -27,7 +27,7 @@ namespace RevitLiveClash
             Category c = e.Category;
             if (c == null || c.CategoryType != CategoryType.Model) return false;
             if (Ignored.Contains((BuiltInCategory)c.Id.IntegerValue)) return false;
-            return e.get_BoundingBox(null) != null;
+            return e.get_BoundingBox(null) != null && Settings.Current.Involves(e);
         }
 
         /// <summary>Полный пересчёт коллизий для всех элементов вида.</summary>
@@ -81,7 +81,7 @@ namespace RevitLiveClash
 
             foreach (Element b in hits)
             {
-                if (!IsCandidate(b) || IsExpected(a, b)) continue;
+                if (!IsCandidate(b) || !Settings.Current.Allows(a, b) || IsExpected(a, b)) continue;
                 Add(a.Id, b.Id);
                 Add(b.Id, a.Id);
                 found.Add(b.Id);

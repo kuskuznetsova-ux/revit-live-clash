@@ -7,6 +7,7 @@ namespace RevitLiveClash
     {
         public Result OnStartup(UIControlledApplication app)
         {
+            Settings.Load();
             string path = Assembly.GetExecutingAssembly().Location;
             RibbonPanel panel = app.CreateRibbonPanel("Live Clash");
             panel.AddItem(new PushButtonData("CheckClashes", "Проверить\nколлизии", path, typeof(CheckClashesCommand).FullName));
